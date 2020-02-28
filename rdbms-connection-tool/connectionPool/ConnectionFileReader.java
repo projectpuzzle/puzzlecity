@@ -3,7 +3,7 @@ package connectionPool;
 public final class ConnectionFileReader {
 
 	private String driver;
-	private String connectionurl;
+	private String connectionUrl;
 	private String user;
 	private String password;
 
