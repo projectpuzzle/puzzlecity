@@ -17,7 +17,7 @@ public class TestPds {
 			DocumentBuilder dBuild = dbFact.newDocumentBuilder();
 			Document doc = dBuild.parse(xmlDoc);
 			System.out.println(doc.getDocumentElement().getNodeName());
-			// NodeList nList = doc.getElementsByTagName("entry");
+			// NodeList nList = doc.getElementsByTagName("entry"); //
 
 		} catch (Exception e) {
 			e.printStackTrace();
