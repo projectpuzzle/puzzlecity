@@ -9,25 +9,32 @@ import java.util.Collection;
 public class JDBCConnectionPool {
 	Collection<Connection> connections = new ArrayList<Connection>();
 
-	public void remplir(String driver, String connectionurl, String user, String password) {
+	// une methode qui "remplit" l'attribut avec un certain nombre d'instances de la
+	// classe Connection
+
+	// un certain nombre de Connections??? liste? tableau?
+	// driver?
+
+	public void fill(String driver, String connectionurl, String username, String password) {
+
 		try {
 			Class.forName(driver);
 
-			Connection con = DriverManager.getConnection(connectionurl, user, password);
+			Connection c = DriverManager.getConnection(connectionurl, username, password);
 
-			connections.add(con);
+			connections.add(c);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
 	public Connection getConnectionByUrl(String connectionurl) {
-		for (Connection connection : connections) {
+		for (Connection c : connections) {
 			String url;
 			try {
-				url = connection.getMetaData().getURL();
+				url = c.getMetaData().getURL();
 				if (url.equals(connectionurl)) {
-					return connection;
+					return c;
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
@@ -37,14 +44,19 @@ public class JDBCConnectionPool {
 		return null;
 	}
 
-	public void remettre(Connection con) {
-		connections.add(con);
+	// replace
+	public void replace(Connection c) {
+		for (Connection c1 : connections) {
+			if (c1 == c)
+				return;
+		}
+		connections.add(c);
 	}
 
 	public void CloseAllConnections() {
-		for (Connection connection : connections) {
+		for (Connection c : connections) {
 			try {
-				connection.close();
+				c.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
