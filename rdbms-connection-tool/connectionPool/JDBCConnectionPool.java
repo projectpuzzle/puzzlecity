@@ -53,7 +53,7 @@ public class JDBCConnectionPool {
 		connections.add(c);
 	}
 
-	public void CloseAllConnections() {
+	public void closeAllConnections() {
 		for (Connection c : connections) {
 			try {
 				c.close();

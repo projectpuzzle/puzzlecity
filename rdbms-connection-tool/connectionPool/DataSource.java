@@ -5,20 +5,16 @@ import java.sql.Connection;
 public class DataSource {
 	public static JDBCConnectionPool jDBCConnectionPool = new JDBCConnectionPool();
 
-	public void remplir(String driver, String chaineDeConnexion, String user, String password) {
-		jDBCConnectionPool.remplir(driver, chaineDeConnexion, user, password);
+	public static Connection getConnectionByUrl(String connectionurl) {
+		return jDBCConnectionPool.getConnectionByUrl(connectionurl);	
 	}
 
-	public Connection getConnectionByUrl(String chaineDeConnexion) {
-		return jDBCConnectionPool.getConnectionByUrl(chaineDeConnexion);	
-		}
-
-	public void remettre(Connection con) {
-		jDBCConnectionPool.remettre(con);
+	public void replace(Connection c) {
+		jDBCConnectionPool.replace(c);
 	}
 
-	public void CloseAllConnections() {
-		jDBCConnectionPool.CloseAllConnections();
+	public void closeAllConnections() {
+		jDBCConnectionPool.closeAllConnections();
 	}
 
 }
