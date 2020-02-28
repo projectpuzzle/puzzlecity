@@ -15,12 +15,11 @@ public class JDBCConnectionPool {
 	// un certain nombre de Connections??? liste? tableau?
 	// driver?
 
-	public void fill(String driver, String connectionurl, String username, String password) {
-
+	public void fill(String driver, String url, String username, String password) {
 		try {
 			Class.forName(driver);
 
-			Connection c = DriverManager.getConnection(connectionurl, username, password);
+			Connection c = DriverManager.getConnection(url, username, password);
 
 			connections.add(c);
 		} catch (Exception e) {
@@ -39,12 +38,10 @@ public class JDBCConnectionPool {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-
 		}
 		return null;
 	}
 
-	// replace
 	public void replace(Connection c) {
 		for (Connection c1 : connections) {
 			if (c1 == c)
