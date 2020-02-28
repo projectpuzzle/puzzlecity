@@ -42,7 +42,6 @@ public class JDBCConnectionPool {
 		return null;
 	}
 
-	// replace
 	public void replace(Connection c) {
 		for (Connection c1 : connections) {
 			if (c1 == c)
