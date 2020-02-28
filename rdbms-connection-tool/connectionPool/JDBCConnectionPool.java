@@ -9,17 +9,11 @@ import java.util.Collection;
 public class JDBCConnectionPool {
 	Collection<Connection> connections = new ArrayList<Connection>();
 
-	// une methode qui "remplit" l'attribut avec un certain nombre d'instances de la
-	// classe Connection
-
-	// un certain nombre de Connections??? liste? tableau?
-	// driver?
-
-	public void fill(String driver, String url, String username, String password) {
+	public void fill(String driver, String url, String user, String password) {
 		try {
 			Class.forName(driver);
 
-			Connection c = DriverManager.getConnection(url, username, password);
+			Connection c = DriverManager.getConnection(url, user, password);
 
 			connections.add(c);
 		} catch (Exception e) {
@@ -49,6 +43,7 @@ public class JDBCConnectionPool {
 		}
 		connections.add(c);
 	}
+
 // test //
 	public void closeAllConnections() {
 		for (Connection c : connections) {

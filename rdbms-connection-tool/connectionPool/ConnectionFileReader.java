@@ -18,6 +18,8 @@ public final class ConnectionFileReader {
 		this.connectionUrl = connectionUrl;
 		this.user = user;
 		this.password = password;
+
 	}
+
 
 }

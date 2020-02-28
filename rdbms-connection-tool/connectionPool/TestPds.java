@@ -8,9 +8,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 
 public class TestPds {
-
+/*
 	public static void main(String[] args) {
-		try {
+		 try {
 			File xmlDoc = new File(
 					"C:\\Users\\etudiant\\Documents\\workspace-spring-tool-suite-4-4.4.0.RELEASE\\Pds\\src\\connectionPool\\ConnectionFile.xml");
 			DocumentBuilderFactory dbFact = DocumentBuilderFactory.newInstance();
@@ -26,4 +26,4 @@ public class TestPds {
 	}
 	}
 
-
+*/
