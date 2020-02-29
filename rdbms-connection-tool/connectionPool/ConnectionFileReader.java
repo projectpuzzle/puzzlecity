@@ -9,7 +9,6 @@ public final class ConnectionFileReader {
 
 	public ConnectionFileReader() {
 		super();
-
 	}
 
 	public ConnectionFileReader(String driver, String connectionUrl, String user, String password) {
