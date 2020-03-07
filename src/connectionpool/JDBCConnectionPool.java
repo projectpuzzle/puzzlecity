@@ -44,7 +44,7 @@ public class JDBCConnectionPool {
 		}
 		connections.add(c);
 	}
-	
+
 // test //
 	public void closeAllConnections() {
 		for (Connection c : connections) {
