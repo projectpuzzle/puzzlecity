@@ -8,7 +8,8 @@ import java.util.Collection;
 
 public class JDBCConnectionPool {
 	Collection<Connection> connections = new ArrayList<Connection>();
-
+	
+	//constructor
 	public void fill(String driver, String url, String user, String password) {
 		try {
 			Class.forName(driver);
