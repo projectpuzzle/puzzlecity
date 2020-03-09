@@ -3,7 +3,7 @@ package connectionpool;
 public final class ConnectionFileReader {
 
 	private String driver;
-	private String connectionUrl;
+	private String url;
 	private String user;
 	private String password;
 
@@ -11,10 +11,10 @@ public final class ConnectionFileReader {
 		super();
 	}
 
-	public ConnectionFileReader(String driver, String connectionUrl, String user, String password) {
+	public ConnectionFileReader(String driver, String url, String user, String password) {
 		super();
 		this.driver = driver;
-		this.connectionUrl = connectionUrl;
+		this.url = url;
 		this.user = user;
 		this.password = password;
 
